@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Jarvis AI</title>
+<style>html,body{height:100%;margin:0;background:#000;color:#f5c400;font:16px system-ui,sans-serif;display:grid;place-items:center;text-align:center}
+img{width:120px;height:120px;border-radius:24px}button{background:#f5c400;color:#000;border:0;border-radius:8px;padding:.6em 1.4em;font:inherit;font-weight:600;cursor:pointer}
+#msg{margin:1em 0;min-height:1.5em;color:#e8d98a}</style></head><body><main>
+<img src="icon.png" alt=""><div id="msg">Connecting to Jarvis…</div><button id="retry" hidden>Try again</button></main>
+<script>
+const URL_ = "https://jarvis.example.com/", msg = document.getElementById("msg"), btn = document.getElementById("retry");
+async function go() {
+  btn.hidden = true; msg.textContent = "Connecting to Jarvis…";
+  try {
+    const c = new AbortController(); setTimeout(() => c.abort(), 8000);
+    await fetch(URL_ + "api/session", { mode: "no-cors", cache: "no-store", signal: c.signal });
+    location.replace(URL_);
+  } catch (e) { msg.textContent = "Can't reach Jarvis. Check your internet or home network, then try again."; btn.hidden = false; }
+}
+btn.addEventListener("click", go); go();
+</script></body></html>
