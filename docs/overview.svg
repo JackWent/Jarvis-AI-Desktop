@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 470" width="960" height="470" font-family="'Segoe UI',system-ui,-apple-system,sans-serif" role="img" aria-label="Jarvis AI desktop app: main window, tray menu and mini orb, connecting through Cloudflare Access and a Cloudflare Tunnel to a self-hosted assistant">
+  <defs>
+    <radialGradient id="orb" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#fff2a8"/>
+      <stop offset="35%" stop-color="#f5c400"/>
+      <stop offset="75%" stop-color="#8a5a00" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#f5c400"/>
+    </marker>
+    <style>
+      .ring { animation: pulse 2.4s ease-in-out infinite; transform-origin: 200px 175px; }
+      .ring2 { animation: pulse 2.4s ease-in-out 1.2s infinite; transform-origin: 200px 175px; }
+      .mini { animation: pulse 2.4s ease-in-out 0.6s infinite; transform-origin: 790px 140px; }
+      @keyframes pulse { 0% { transform: scale(0.85); opacity: 0.9; } 100% { transform: scale(1.35); opacity: 0; } }
+      @media (prefers-reduced-motion: reduce) { .ring, .ring2, .mini { animation: none; } }
+    </style>
+  </defs>
+
+  <rect width="960" height="470" rx="14" fill="#0b0b0b"/>
+
+  <!-- Main window -->
+  <rect x="30" y="30" width="340" height="290" rx="8" fill="#000" stroke="#3a3320"/>
+  <rect x="30" y="30" width="340" height="30" rx="8" fill="#1a1708"/>
+  <rect x="30" y="52" width="340" height="8" fill="#1a1708"/>
+  <image href="data:image/png;base64,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" x="40" y="37" width="16" height="16"/>
+  <text x="62" y="50" font-size="12" fill="#e8d98a">Jarvis AI</text>
+  <text x="312" y="50" font-size="12" fill="#8a7d4a">—  ▢  ✕</text>
+  <circle class="ring" cx="200" cy="175" r="52" fill="none" stroke="#f5c400" stroke-width="2"/>
+  <circle class="ring2" cx="200" cy="175" r="52" fill="none" stroke="#f5c400" stroke-width="1.5"/>
+  <circle cx="200" cy="175" r="58" fill="url(#orb)" filter="url(#glow)"/>
+  <text x="200" y="268" text-anchor="middle" font-size="14" fill="#f5c400">Listening for “Hey Jarvis”</text>
+  <text x="200" y="290" text-anchor="middle" font-size="11" fill="#8a7d4a">your self-hosted page loads here</text>
+  <text x="200" y="345" text-anchor="middle" font-size="13" fill="#e8d98a" font-weight="600">Main window</text>
+  <text x="200" y="363" text-anchor="middle" font-size="11" fill="#8a7d4a">Ctrl+Alt+J show / hide · close hides to tray</text>
+
+  <!-- Tray menu -->
+  <rect x="410" y="60" width="260" height="196" rx="8" fill="#202020" stroke="#3a3a3a"/>
+  <g font-size="13" fill="#eee">
+    <text x="430" y="92">Open Jarvis AI</text><text x="650" y="92" text-anchor="end" fill="#999" font-size="11">Ctrl+Alt+J</text>
+    <text x="430" y="126">Mini orb</text><text x="650" y="126" text-anchor="end" fill="#999" font-size="11">Ctrl+Alt+M</text>
+    <text x="430" y="160">Pause listening</text>
+    <text x="430" y="194"><tspan fill="#f5c400">✓ </tspan>Start with Windows</text>
+    <line x1="420" y1="210" x2="660" y2="210" stroke="#3a3a3a"/>
+    <text x="430" y="238">Quit</text>
+  </g>
+  <rect x="410" y="268" width="260" height="34" rx="6" fill="#1a1a1a" stroke="#2a2a2a"/>
+  <text x="424" y="290" font-size="11" fill="#999">^</text>
+  <image href="data:image/png;base64,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" x="560" y="275" width="20" height="20"/>
+  <text x="594" y="290" font-size="11" fill="#999">ENG  18:40</text>
+  <text x="540" y="345" text-anchor="middle" font-size="13" fill="#e8d98a" font-weight="600">Tray icon and menu</text>
+  <text x="540" y="363" text-anchor="middle" font-size="11" fill="#8a7d4a">starts with Windows, single instance</text>
+
+  <!-- Mini orb -->
+  <rect x="710" y="60" width="160" height="160" rx="10" fill="#000" stroke="#3a3320"/>
+  <circle class="mini" cx="790" cy="140" r="34" fill="none" stroke="#f5c400" stroke-width="1.5"/>
+  <circle cx="790" cy="140" r="38" fill="url(#orb)" filter="url(#glow)"/>
+  <text x="790" y="245" text-anchor="middle" font-size="13" fill="#e8d98a" font-weight="600">Mini orb</text>
+  <text x="790" y="263" text-anchor="middle" font-size="11" fill="#8a7d4a">frameless, always on top</text>
+
+  <!-- How it connects -->
+  <g font-size="12" text-anchor="middle">
+    <rect x="40" y="395" width="190" height="46" rx="8" fill="#1a1708" stroke="#f5c400"/>
+    <text x="135" y="415" fill="#f5c400" font-weight="600">Jarvis AI.exe</text>
+    <text x="135" y="432" fill="#8a7d4a" font-size="11">Tauri 2 · Rust · WebView2</text>
+
+    <rect x="280" y="395" width="190" height="46" rx="8" fill="#111" stroke="#555"/>
+    <text x="375" y="415" fill="#eee" font-weight="600">Cloudflare Access</text>
+    <text x="375" y="432" fill="#999" font-size="11">sign-in in front of the page</text>
+
+    <rect x="520" y="395" width="190" height="46" rx="8" fill="#111" stroke="#555"/>
+    <text x="615" y="415" fill="#eee" font-weight="600">Cloudflare Tunnel</text>
+    <text x="615" y="432" fill="#999" font-size="11">outbound only, no open ports</text>
+
+    <rect x="760" y="395" width="170" height="46" rx="8" fill="#111" stroke="#555"/>
+    <text x="845" y="415" fill="#eee" font-weight="600">Your assistant</text>
+    <text x="845" y="432" fill="#999" font-size="11">self-hosted web page</text>
+  </g>
+  <g stroke="#f5c400" stroke-width="1.5" marker-end="url(#arrow)">
+    <line x1="232" y1="418" x2="276" y2="418"/>
+    <line x1="472" y1="418" x2="516" y2="418"/>
+    <line x1="712" y1="418" x2="756" y2="418"/>
+  </g>
+</svg>
